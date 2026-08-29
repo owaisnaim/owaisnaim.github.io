@@ -79,6 +79,79 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  // Project Category Filter Handler
+  $('.filter-btn').click(function() {
+    var filterValue = $(this).attr('data-filter');
+    $('.filter-btn').removeClass('active');
+    $(this).addClass('active');
+
+    if (filterValue === 'all') {
+      $('.project-item').removeClass('hidden').fadeIn(300);
+    } else {
+      $('.project-item').each(function() {
+        var categories = $(this).attr('data-category') || '';
+        if (categories.indexOf(filterValue) !== -1) {
+          $(this).removeClass('hidden').fadeIn(300);
+        } else {
+          $(this).addClass('hidden').fadeOut(200);
+        }
+      });
+    }
+  });
+
+  // Animated Stat Counters using IntersectionObserver
+  function initStatCounters() {
+    var counters = document.querySelectorAll('.metric-number[data-target]');
+    if (!counters.length) return;
+
+    var animated = false;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !animated) {
+          animated = true;
+          counters.forEach(function(counter) {
+            var target = parseFloat(counter.getAttribute('data-target'));
+            var prefix = counter.getAttribute('data-prefix') || '';
+            var suffix = counter.getAttribute('data-suffix') || '';
+            var isDecimal = target % 1 !== 0;
+            var duration = 1600; // ms
+            var startTime = null;
+
+            function updateCounter(currentTime) {
+              if (!startTime) startTime = currentTime;
+              var progress = Math.min((currentTime - startTime) / duration, 1);
+              // Ease out quadratic
+              var easeProgress = 1 - (1 - progress) * (1 - progress);
+              var currentVal = easeProgress * target;
+
+              if (isDecimal) {
+                counter.textContent = prefix + currentVal.toFixed(1) + suffix;
+              } else {
+                counter.textContent = prefix + Math.floor(currentVal).toLocaleString() + suffix;
+              }
+
+              if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+              } else {
+                if (isDecimal) {
+                  counter.textContent = prefix + target.toFixed(1) + suffix;
+                } else {
+                  counter.textContent = prefix + target.toLocaleString() + suffix;
+                }
+              }
+            }
+            requestAnimationFrame(updateCounter);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    var metricsSection = document.querySelector('.metrics-section');
+    if (metricsSection) {
+      observer.observe(metricsSection);
+    }
+  }
+
   // Copy email to clipboard helper
   window.copyEmailToClipboard = function(email) {
     if (!email) email = 'owaisnaim9@gmail.com';
@@ -102,5 +175,10 @@
       toast.removeClass('show');
     }, 2500);
   }
+
+  // Initialize on load
+  $(document).ready(function() {
+    initStatCounters();
+  });
 
 })(jQuery);
