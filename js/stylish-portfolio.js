@@ -75,7 +75,7 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Interactive Terminal Tab Switcher
+  // Interactive Terminal Tab Switcher (Without Layout Shifts)
   window.switchTerminalTab = function(tabName) {
     $('.terminal-tab-btn').removeClass('active');
     $('.terminal-code').removeClass('active');
@@ -84,7 +84,8 @@
     $('#tab-' + tabName).addClass('active');
   };
 
-  $('.terminal-tab-btn').click(function() {
+  $('.terminal-tab-btn').click(function(e) {
+    e.preventDefault();
     var tab = $(this).attr('data-tab');
     switchTerminalTab(tab);
   });

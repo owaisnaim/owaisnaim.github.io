@@ -60,7 +60,7 @@
       </ul>
 
       <div class="nav-actions">
-        <button class="btn-cmd-k d-none d-sm-inline-flex" onclick="openCommandPalette()" title="Command Palette">
+        <button class="btn-cmd-k d-none d-sm-inline-flex" onclick="openCommandPalette()" title="Command Palette" type="button">
           <i class="fas fa-search"></i>
           <span>Search</span>
           <kbd>⌘K</kbd>
@@ -68,7 +68,7 @@
         <a class="btn-nav-resume d-none d-md-inline-flex" href="mailto:owaisnaim9@gmail.com?subject=Resume%20Request%20-%20Mohd%20Owais%20Naim%20(Senior%20Software%20Engineer)&body=Hi%20Mohd%20Owais,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20request%20a%20copy%20of%20your%20latest%20resume.%0D%0A%0D%0ABest%20regards," title="Request Resume PDF">
           <i class="fas fa-file-pdf mr-1"></i> Resume
         </a>
-        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation" type="button">
           <i class="fas fa-bars"></i>
         </button>
       </div>
@@ -118,7 +118,7 @@
             <a class="social-pill-btn" href="https://www.linkedin.com/in/owaisnaim/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <button class="social-pill-btn" onclick="copyEmailToClipboard('owaisnaim9@gmail.com')" title="Copy Email" style="cursor: pointer;">
+            <button class="social-pill-btn" onclick="copyEmailToClipboard('owaisnaim9@gmail.com')" title="Copy Email" type="button" style="cursor: pointer;">
               <i class="fas fa-copy"></i>
             </button>
           </div>
@@ -133,9 +133,9 @@
               <span class="term-dot green"></span>
             </div>
             <div class="terminal-tabs">
-              <button class="terminal-tab-btn active" data-tab="curl">bash</button>
-              <button class="terminal-tab-btn" data-tab="arch">architecture.yml</button>
-              <button class="terminal-tab-btn" data-tab="stack">stack.json</button>
+              <button class="terminal-tab-btn active" data-tab="curl" type="button">bash</button>
+              <button class="terminal-tab-btn" data-tab="arch" type="button">architecture.yml</button>
+              <button class="terminal-tab-btn" data-tab="stack" type="button">stack.json</button>
             </div>
           </div>
 
@@ -173,11 +173,12 @@
     <span class="t-muted">assets:</span> <span class="t-yellow">AWS S3 Multipart Stream</span></code></pre>
 
             <!-- Tab 3: Tech Stack JSON -->
-            <pre class="terminal-code" id="tab-stack"><code><span class="t-indigo">{</span>
+            <pre class="terminal-code" id="tab-stack"><code><span class="t-muted"># Core Technology Snapshot</span>
+<span class="t-indigo">{</span>
   <span class="t-green">"languages"</span>: [<span class="t-yellow">"Java (8/11/17+)"</span>, <span class="t-yellow">"SQL"</span>],
-  <span class="t-green">"frameworks"</span>: [<span class="t-yellow">"Spring Boot"</span>, <span class="t-yellow">"Spring JPA"</span>, <span class="t-yellow">"Hibernate"</span>],
+  <span class="t-green">"frameworks"</span>: [<span class="t-yellow">"Spring Boot"</span>, <span class="t-yellow">"Spring Data JPA"</span>, <span class="t-yellow">"Hibernate"</span>],
   <span class="t-green">"cloud_infra"</span>: [<span class="t-yellow">"AWS SES"</span>, <span class="t-yellow">"AWS S3"</span>, <span class="t-yellow">"AWS RDS"</span>, <span class="t-yellow">"Docker"</span>],
-  <span class="t-green">"messaging"</span>: [<span class="t-yellow">"Apache Kafka"</span>],
+  <span class="t-green">"messaging"</span>: [<span class="t-yellow">"Apache Kafka"</span>, <span class="t-yellow">"Event-Driven"</span>],
   <span class="t-green">"testing"</span>: [<span class="t-yellow">"JUnit 5"</span>, <span class="t-yellow">"Mockito"</span>, <span class="t-yellow">"90%+ Coverage"</span>]
 <span class="t-indigo">}</span></code></pre>
           </div>
@@ -719,7 +720,7 @@
           <a href="mailto:owaisnaim9@gmail.com?subject=Resume%20Request%20-%20Mohd%20Owais%20Naim%20(Senior%20Software%20Engineer)&body=Hi%20Mohd%20Owais,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20request%20a%20copy%20of%20your%20latest%20resume.%0D%0A%0D%0ABest%20regards," class="btn-secondary-linear">
             <i class="fas fa-file-pdf"></i> Request Resume (PDF)
           </a>
-          <button onclick="copyEmailToClipboard('owaisnaim9@gmail.com')" class="btn-secondary-linear" style="cursor: pointer;">
+          <button onclick="copyEmailToClipboard('owaisnaim9@gmail.com')" class="btn-secondary-linear" type="button" style="cursor: pointer;">
             <i class="fas fa-copy"></i> Copy Email
           </button>
         </div>
@@ -809,7 +810,7 @@
   </div>
 
   <!-- Scroll to Top Button -->
-  <button class="scroll-top-btn" aria-label="Scroll to Top">
+  <button class="scroll-top-btn" aria-label="Scroll to Top" type="button">
     <i class="fas fa-chevron-up"></i>
   </button>
 

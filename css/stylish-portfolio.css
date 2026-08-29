@@ -312,6 +312,7 @@ code, .font-mono {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 1.25rem;
+  align-items: stretch;
 }
 
 .bento-card {
@@ -491,7 +492,7 @@ code, .font-mono {
 }
 
 /* -------------------------------------------------------------
-   Interactive System Terminal Bento Tile
+   Interactive System Terminal Bento Tile (Fixed Height & Stable Grid)
 -------------------------------------------------------------- */
 .terminal-card {
   grid-column: span 4;
@@ -502,6 +503,7 @@ code, .font-mono {
   flex-direction: column;
   overflow: hidden;
   font-family: 'JetBrains Mono', monospace;
+  height: 100%;
 }
 
 .terminal-header {
@@ -511,6 +513,7 @@ code, .font-mono {
   padding: 0.75rem 1rem;
   background: rgba(255, 255, 255, 0.025);
   border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
 }
 
 .terminal-controls {
@@ -549,12 +552,16 @@ code, .font-mono {
   color: var(--text-primary);
 }
 
+/* Fixed Body Height ensures tab switching NEVER changes container size or causes layout shifts */
 .terminal-body {
   padding: 1.25rem;
   font-size: 0.8rem;
   color: var(--text-secondary);
-  flex-grow: 1;
-  line-height: 1.7;
+  flex: 1 1 auto;
+  min-height: 280px;
+  max-height: 280px;
+  line-height: 1.65;
+  overflow-y: auto;
   overflow-x: auto;
 }
 
@@ -1224,6 +1231,10 @@ code, .font-mono {
   }
   .terminal-card {
     grid-column: span 12;
+  }
+  .terminal-body {
+    min-height: 240px;
+    max-height: 240px;
   }
   .metrics-grid-row {
     grid-template-columns: repeat(2, 1fr);
