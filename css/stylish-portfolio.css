@@ -48,7 +48,12 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 85px;
   font-size: 16px;
+}
+
+section[id] {
+  scroll-margin-top: 85px;
 }
 
 body {
@@ -111,7 +116,7 @@ code, .font-mono {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
-  transition: all var(--transition-normal);
+  transition: padding var(--transition-fast), background var(--transition-fast);
 }
 
 .site-nav.scrolled {
