@@ -1,64 +1,95 @@
 (function($) {
-  "use strict"; // Start of use strict
+  "use strict";
 
-  // Closes the sidebar menu
-  $(".menu-toggle").click(function(e) {
+  // Mobile menu toggle
+  $(".mobile-nav-toggle").click(function(e) {
     e.preventDefault();
-    $("#sidebar-wrapper").toggleClass("active");
-    $(".menu-toggle > .fa-bars, .menu-toggle > .fa-times").toggleClass("fa-bars fa-times");
-    $(this).toggleClass("active");
+    $(".nav-links").toggleClass("active");
+    $(this).find("i").toggleClass("fa-bars fa-times");
   });
 
-  // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+  // Close mobile nav when clicking a link
+  $(".nav-links a").click(function() {
+    $(".nav-links").removeClass("active");
+    $(".mobile-nav-toggle i").removeClass("fa-times").addClass("fa-bars");
+  });
+
+  // Smooth scroll
+  $('a[href*="#"]:not([href="#"])').click(function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
+        e.preventDefault();
+        var navHeight = $('.site-nav').outerHeight() || 70;
         $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000, "easeInOutExpo");
+          scrollTop: target.offset().top - navHeight + 10
+        }, 800);
         return false;
       }
     }
   });
 
-  // Closes responsive menu when a scroll trigger link is clicked
-  $('#sidebar-wrapper .js-scroll-trigger').click(function() {
-    $("#sidebar-wrapper").removeClass("active");
-    $(".menu-toggle").removeClass("active");
-    $(".menu-toggle > .fa-bars, .menu-toggle > .fa-times").toggleClass("fa-bars fa-times");
-  });
-
-  // Scroll to top button appear
-  $(document).scroll(function() {
+  // Scroll events
+  $(window).scroll(function() {
     var scrollDistance = $(this).scrollTop();
-    if (scrollDistance > 100) {
-      $('.scroll-to-top').fadeIn();
+    
+    // Navbar styling on scroll
+    if (scrollDistance > 40) {
+      $('.site-nav').addClass('scrolled');
+    } else {
+      $('.site-nav').removeClass('scrolled');
+    }
+
+    // Scroll to top button
+    if (scrollDistance > 300) {
+      $('.scroll-to-top').css('display', 'inline-flex');
     } else {
       $('.scroll-to-top').fadeOut();
     }
+
+    // Active link update
+    var navHeight = $('.site-nav').outerHeight() || 70;
+    $('section[id]').each(function() {
+      var top = $(this).offset().top - navHeight - 20;
+      var bottom = top + $(this).outerHeight();
+      var id = $(this).attr('id');
+      if (scrollDistance >= top && scrollDistance < bottom) {
+        $('.nav-links a').removeClass('active');
+        $('.nav-links a[href="#' + id + '"]').addClass('active');
+      }
+    });
   });
 
-})(jQuery); // End of use strict
+  // Scroll to top button action
+  $('.scroll-to-top').click(function(e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, 800);
+  });
 
-// Disable Google Maps scrolling
-// See http://stackoverflow.com/a/25904582/1607849
-// Disable scroll zooming and bind back the click event
-var onMapMouseleaveHandler = function(event) {
-  var that = $(this);
-  that.on('click', onMapClickHandler);
-  that.off('mouseleave', onMapMouseleaveHandler);
-  that.find('iframe').css("pointer-events", "none");
-}
-var onMapClickHandler = function(event) {
-  var that = $(this);
-  // Disable the click handler until the user leaves the map area
-  that.off('click', onMapClickHandler);
-  // Enable scrolling zoom
-  that.find('iframe').css("pointer-events", "auto");
-  // Handle the mouse leave event
-  that.on('mouseleave', onMapMouseleaveHandler);
-}
-// Enable map zooming with mouse scroll when the user clicks the map
-$('.map').on('click', onMapClickHandler);
+  // Copy email to clipboard helper
+  window.copyEmailToClipboard = function(email) {
+    if (!email) email = 'owaisnaim9@gmail.com';
+    navigator.clipboard.writeText(email).then(function() {
+      showToast('Email copied to clipboard: ' + email);
+    }).catch(function() {
+      // Fallback
+      var temp = $('<input>');
+      $('body').append(temp);
+      temp.val(email).select();
+      document.execCommand('copy');
+      temp.remove();
+      showToast('Email copied to clipboard: ' + email);
+    });
+  };
+
+  function showToast(message) {
+    var toast = $('#toast-notice');
+    toast.find('.toast-msg').text(message);
+    toast.addClass('show');
+    setTimeout(function() {
+      toast.removeClass('show');
+    }, 3000);
+  }
+
+})(jQuery);

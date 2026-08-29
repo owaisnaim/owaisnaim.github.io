@@ -1,248 +1,921 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Mohd Owais Naim - Senior Software Engineer specializing in Java, Spring Boot, Microservices, and AWS Cloud Architecture.">
+  <meta name="author" content="Mohd Owais Naim">
+  <meta name="keywords" content="Mohd Owais Naim, Senior Software Engineer, Java Developer, Spring Boot, Microservices, AWS, RESTful APIs, Redis, Database Optimization">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Mohd Owais Naim | Senior Software Engineer">
+  <meta property="og:description" content="Senior Software Engineer specializing in Java, Spring Boot, Microservices, and AWS Cloud Architecture.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://owaisnaim.github.io/">
 
-    <title>Owais Naim</title>
+  <title>Mohd Owais Naim | Senior Software Engineer</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+  <!-- FontAwesome Free Icons -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  </head>
+  <!-- Custom Stylesheet -->
+  <link href="css/stylish-portfolio.css" rel="stylesheet">
+</head>
 
-  <body id="page-top">
+<body id="page-top">
 
-    <!-- Navigation -->
-    <a class="menu-toggle rounded" href="#">
-      <i class="fas fa-bars"></i>
-    </a>
-    <nav id="sidebar-wrapper">
-      <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-          <a class="js-scroll-trigger" href="#page-top">Menu</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#page-top">Home</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#about">About</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#services">Services</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#contact">Contact</a>
-        </li>
+  <!-- Header / Navigation Bar -->
+  <nav class="site-nav">
+    <div class="container nav-container">
+      <a class="brand-logo" href="#page-top">
+        <span class="logo-dot"></span>
+        <span>OWAIS<span style="color: var(--accent-cyan);">.DEV</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
 
-    <!-- Header -->
-    <header class="masthead d-flex">
-      <div class="container text-center my-auto">
-        
-        <h1 class="mb-1">Owais Naim</h1>
-        <h3 class="mb-5">
-          <em>Full Stack Web Developer and App Developer!</em>
-        </h3>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+      <div class="nav-actions">
+        <a class="btn-nav-cta d-none d-sm-inline-flex" href="https://github.com/owaisnaim" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a class="btn-nav-cta d-none d-md-inline-flex" href="https://www.linkedin.com/in/owaisnaim/" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
-      <div class="overlay"></div>
-    </header>
+    </div>
+  </nav>
 
-    <!-- About -->
-    <section class="content-section bg-light" id="about">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h2>I Can Make Landing Pages,Beautiful Front End Websites and Web Apps.</h2>
-            <p class="lead mb-5">I Have Been Making Website Since A Long Time And I Can Give You Exactly What You Want.
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="hero-status-badge">
+            <span class="hero-status-pulse"></span>
+            <span>Available for Senior Backend & Cloud Roles</span>
+          </div>
+
+          <h1 class="hero-title">Mohd Owais Naim</h1>
+          
+          <div class="hero-subtitle">
+            <span>Senior Software Engineer</span>
+            <span class="pill-highlight">Java • Spring Boot • Microservices • AWS</span>
+          </div>
+
+          <p class="hero-description">
+            Building resilient distributed systems, enterprise microservices, high-throughput REST APIs, and scalable cloud architectures. Passionate about database optimization, zero-downtime services, and clean test-driven engineering.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#experience" class="btn-primary-glow">
+              <i class="fas fa-briefcase"></i> View Experience
+            </a>
+            <a href="#projects" class="btn-secondary-outline">
+              <i class="fas fa-code-branch"></i> Featured Projects
+            </a>
+            <a href="mailto:owaisnaim9@gmail.com" class="btn-secondary-outline">
+              <i class="fas fa-envelope"></i> Get In Touch
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <a class="social-icon-btn" href="https://github.com/owaisnaim" target="_blank" rel="noopener noreferrer" title="GitHub Profile">
+              <i class="fab fa-github"></i>
+            </a>
+            <a class="social-icon-btn" href="https://www.linkedin.com/in/owaisnaim/" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a class="social-icon-btn" href="mailto:owaisnaim9@gmail.com" title="Email Mohd Owais Naim">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <button class="social-icon-btn" onclick="copyEmailToClipboard('owaisnaim9@gmail.com')" title="Copy Email Address" style="cursor: pointer;">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-lg-5 text-center">
+          <div class="hero-avatar-wrapper">
+            <div class="hero-avatar-card">
+              <img src="img/ProfilePic.jpeg" alt="Mohd Owais Naim" class="hero-avatar-img">
+            </div>
+            <div class="hero-badge-overlay">
+              <i class="fas fa-award hero-badge-icon"></i>
+              <div class="hero-badge-text">
+                <strong>6+ Years Experience</strong>
+                <span>Distributed Systems & Cloud</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Metrics & Highlights Bar -->
+  <section class="metrics-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-lg-3 mb-3 mb-lg-0">
+          <div class="metric-card">
+            <div class="metric-number">6+</div>
+            <div class="metric-label">Years Experience</div>
+            <div class="metric-sub">Enterprise & Cloud</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 mb-3 mb-lg-0">
+          <div class="metric-card">
+            <div class="metric-number">$1.1M+</div>
+            <div class="metric-label">Revenue Impact</div>
+            <div class="metric-sub">Spring Boot Architecture</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 mb-3 mb-lg-0">
+          <div class="metric-card">
+            <div class="metric-number">1,000+</div>
+            <div class="metric-label">Daily Emails Handled</div>
+            <div class="metric-sub">0% Downtime System</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 mb-3 mb-lg-0">
+          <div class="metric-card">
+            <div class="metric-number">90%+</div>
+            <div class="metric-label">Code Coverage</div>
+            <div class="metric-sub">JUnit & Mockito Testing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section-padding" id="about">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fas fa-user"></i> Professional Profile</span>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle mx-auto">
+          Senior Software Engineer with deep expertise in Java, the Spring ecosystem, and AWS cloud infrastructure.
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="about-card">
+            <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 1.25rem;">
+              I am a results-driven <strong>Senior Software Engineer</strong> with extensive experience designing, developing, and deploying mission-critical distributed systems and microservices across high-growth startups and global enterprises including <strong>Bracketworks</strong>, <strong>Publicis Sapient</strong>, <strong>Compunnel Inc</strong>, and <strong>Tata Consultancy Services (TCS)</strong>.
+            </p>
+            <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 0;">
+              My core technical philosophy revolves around building robust, testable, and fault-tolerant backends. From architecting complex Transaction Monitoring Systems with custom fraud rules to re-architecting legacy enterprise monolithic workflows into high-throughput Spring Boot microservices, I focus on delivering tangible business value, latency reduction, and 99.99%+ availability.
+            </p>
+
+            <div class="about-highlights">
+              <div class="about-highlight-item">
+                <div class="about-highlight-icon"><i class="fas fa-server"></i></div>
+                <div>
+                  <h4>Distributed Microservices</h4>
+                  <p>Scalable RESTful & event-driven services with Spring Boot and Kafka.</p>
+                </div>
+              </div>
+              <div class="about-highlight-item">
+                <div class="about-highlight-icon"><i class="fas fa-cloud"></i></div>
+                <div>
+                  <h4>AWS Cloud Integration</h4>
+                  <p>Production AWS workloads with SES, S3, RDS, and CloudWatch monitoring.</p>
+                </div>
+              </div>
+              <div class="about-highlight-item">
+                <div class="about-highlight-icon"><i class="fas fa-tachometer-alt"></i></div>
+                <div>
+                  <h4>Performance & Caching</h4>
+                  <p>30% latency reduction with Redis caching & database query tuning.</p>
+                </div>
+              </div>
+              <div class="about-highlight-item">
+                <div class="about-highlight-icon"><i class="fas fa-shield-alt"></i></div>
+                <div>
+                  <h4>Fraud & Compliance</h4>
+                  <p>Real-time anomaly detection and AML transaction monitoring rules.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section class="section-padding" id="skills" style="background: rgba(255, 255, 255, 0.01);">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fas fa-code"></i> Core Competencies</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle mx-auto">
+          A comprehensive breakdown of the languages, frameworks, cloud services, and tools I use to build scalable software.
+        </p>
+      </div>
+
+      <div class="row">
+        <!-- Backend & Frameworks -->
+        <div class="col-lg-6 mb-4">
+          <div class="skills-category-card">
+            <div class="skills-cat-header">
+              <div class="skills-cat-icon icon-backend">
+                <i class="fab fa-java"></i>
+              </div>
+              <div>
+                <h3>Backend & Frameworks</h3>
+                <span>Core languages, frameworks & API architecture</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight"><i class="fab fa-java"></i> Java (8 / 11 / 17+)</span>
+              <span class="skill-tag highlight"><i class="fas fa-leaf"></i> Spring Boot</span>
+              <span class="skill-tag highlight"><i class="fas fa-cubes"></i> Microservices</span>
+              <span class="skill-tag"><i class="fas fa-network-wired"></i> RESTful APIs</span>
+              <span class="skill-tag"><i class="fas fa-database"></i> Spring Data JPA</span>
+              <span class="skill-tag"><i class="fas fa-layer-group"></i> Hibernate</span>
+              <span class="skill-tag"><i class="fas fa-code-branch"></i> Flyway Migrations</span>
+              <span class="skill-tag"><i class="fas fa-boxes"></i> Java Collections & Concurrency</span>
+              <span class="skill-tag"><i class="fas fa-shield-alt"></i> API Security & Validation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cloud & DevOps -->
+        <div class="col-lg-6 mb-4">
+          <div class="skills-category-card">
+            <div class="skills-cat-header">
+              <div class="skills-cat-icon icon-cloud">
+                <i class="fab fa-aws"></i>
+              </div>
+              <div>
+                <h3>Cloud & Infrastructure</h3>
+                <span>AWS cloud services, containerization & CI/CD</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight"><i class="fab fa-aws"></i> Amazon SES</span>
+              <span class="skill-tag highlight"><i class="fas fa-box-open"></i> Amazon S3 Bucket</span>
+              <span class="skill-tag highlight"><i class="fas fa-database"></i> Amazon RDS</span>
+              <span class="skill-tag"><i class="fas fa-chart-line"></i> AWS CloudWatch</span>
+              <span class="skill-tag"><i class="fab fa-docker"></i> Docker Containers</span>
+              <span class="skill-tag"><i class="fab fa-jenkins"></i> Jenkins CI/CD</span>
+              <span class="skill-tag"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+              <span class="skill-tag"><i class="fas fa-server"></i> Server Provisioning & Monitoring</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Databases & Caching -->
+        <div class="col-lg-6 mb-4">
+          <div class="skills-category-card">
+            <div class="skills-cat-header">
+              <div class="skills-cat-icon icon-db">
+                <i class="fas fa-database"></i>
+              </div>
+              <div>
+                <h3>Databases & Caching</h3>
+                <span>Relational databases, indexing & caching layers</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight"><i class="fas fa-bolt"></i> Redis Caching</span>
+              <span class="skill-tag highlight"><i class="fas fa-database"></i> MariaDB</span>
+              <span class="skill-tag"><i class="fas fa-server"></i> Microsoft SQL Server</span>
+              <span class="skill-tag"><i class="fas fa-database"></i> MySQL</span>
+              <span class="skill-tag"><i class="fas fa-file-code"></i> Stored Procedures</span>
+              <span class="skill-tag"><i class="fas fa-search"></i> Database Indexing & Query Tuning</span>
+              <span class="skill-tag"><i class="fas fa-sitemap"></i> Schema Design & Normalization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testing & Engineering Tools -->
+        <div class="col-lg-6 mb-4">
+          <div class="skills-category-card">
+            <div class="skills-cat-header">
+              <div class="skills-cat-icon icon-tools">
+                <i class="fas fa-vial"></i>
+              </div>
+              <div>
+                <h3>Testing & Practices</h3>
+                <span>Test-driven development, agile & system design</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight"><i class="fas fa-check-double"></i> JUnit 5</span>
+              <span class="skill-tag highlight"><i class="fas fa-magic"></i> Mockito</span>
+              <span class="skill-tag"><i class="fas fa-desktop"></i> Postman / REST Testing</span>
+              <span class="skill-tag"><i class="fab fa-jira"></i> JIRA & Agile/Scrum</span>
+              <span class="skill-tag"><i class="fas fa-shield-virus"></i> Transaction & Fraud Monitoring</span>
+              <span class="skill-tag"><i class="fas fa-project-diagram"></i> System Architecture & Design</span>
+              <span class="skill-tag"><i class="fas fa-clock"></i> Automated Cron Schedulers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Timeline -->
+  <section class="section-padding" id="experience">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fas fa-briefcase"></i> Career Journey</span>
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle mx-auto">
+          Proven industry experience architecting scalable backend solutions and leading high-impact engineering initiatives.
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-11 mx-auto">
+          <div class="experience-timeline">
+
+            <!-- Role 1: Bracketworks -->
+            <div class="timeline-item current">
+              <div class="timeline-node"></div>
+              <div class="experience-card">
+                <div class="exp-header">
+                  <div>
+                    <h3 class="exp-role">Senior Software Engineer</h3>
+                    <div class="exp-company">
+                      <span>Bracketworks</span>
+                      <span class="exp-loc">• Remote</span>
+                    </div>
+                  </div>
+                  <div class="exp-date-badge current">
+                    <i class="far fa-calendar-alt"></i> Sep 2025 – Present
+                  </div>
+                </div>
+
+                <ul class="exp-bullets">
+                  <li>
+                    Designed and implemented a <strong>Transaction Monitoring System with 10 custom rules</strong> to track user gaming activity, detect anomalies, and automatically notify administrators of discrepancies, significantly enhancing fraud detection and regulatory compliance.
+                  </li>
+                  <li>
+                    Implemented a <strong>high-availability email service</strong>, processing <strong>1,000+ emails daily with 0% downtime</strong>.
+                  </li>
+                  <li>
+                    Optimized website and backend performance, <strong>reducing load times by 30%</strong> through Redis multi-level caching and database query optimization.
+                  </li>
+                  <li>
+                    Ensured <strong>90% unit and integration test coverage</strong> with JUnit and Mockito, enhancing code reliability and drastically reducing production defects.
+                  </li>
+                </ul>
+
+                <div class="exp-tags">
+                  <span class="exp-tag">Java</span>
+                  <span class="exp-tag">Spring Boot</span>
+                  <span class="exp-tag">AWS SES</span>
+                  <span class="exp-tag">AWS S3</span>
+                  <span class="exp-tag">Redis Caching</span>
+                  <span class="exp-tag">Transaction Monitoring</span>
+                  <span class="exp-tag">JUnit & Mockito</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role 2: Publicis Sapient -->
+            <div class="timeline-item">
+              <div class="timeline-node"></div>
+              <div class="experience-card">
+                <div class="exp-header">
+                  <div>
+                    <h3 class="exp-role">Senior Associate Technology L1</h3>
+                    <div class="exp-company">
+                      <span>Publicis Sapient</span>
+                      <span class="exp-loc">• Noida, India</span>
+                    </div>
+                  </div>
+                  <div class="exp-date-badge">
+                    <i class="far fa-calendar-alt"></i> May 2025 – Sep 2025
+                  </div>
+                </div>
+
+                <ul class="exp-bullets">
+                  <li>
+                    Built enterprise-grade <strong>RESTful APIs with proper semantic versioning, strict payload validation, and centralized exception handling</strong>, improving API reliability and long-term maintainability.
+                  </li>
+                  <li>
+                    Improved system throughput by implementing caching strategies using <strong>Redis</strong> and eliminating redundant database calls.
+                  </li>
+                  <li>
+                    Automated manual engineering and operational workflows, <strong>saving 10 hours/week</strong> of operational and developer effort.
+                  </li>
+                </ul>
+
+                <div class="exp-tags">
+                  <span class="exp-tag">Java</span>
+                  <span class="exp-tag">Spring Boot</span>
+                  <span class="exp-tag">RESTful APIs</span>
+                  <span class="exp-tag">Redis</span>
+                  <span class="exp-tag">Workflow Automation</span>
+                  <span class="exp-tag">CI/CD</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role 3: Compunnel Inc -->
+            <div class="timeline-item">
+              <div class="timeline-node"></div>
+              <div class="experience-card">
+                <div class="exp-header">
+                  <div>
+                    <h3 class="exp-role">Software Engineer L2</h3>
+                    <div class="exp-company">
+                      <span>Compunnel Inc</span>
+                      <span class="exp-loc">• Noida, India</span>
+                    </div>
+                  </div>
+                  <div class="exp-date-badge">
+                    <i class="far fa-calendar-alt"></i> Jun 2022 – Jan 2025
+                  </div>
+                </div>
+
+                <ul class="exp-bullets">
+                  <li>
+                    Developed core <strong>REST APIs for a high-volume B2B application</strong> to execute critical operations, including managing user hierarchies, processing bulk orders, connecting customers to authorized users, and role-based permission provisioning.
+                  </li>
+                  <li>
+                    Implemented automated <strong>daily cron jobs</strong> to synchronize conversion rates in the database, directly used to compute precise in-stock parts quantities and automated order placement.
+                  </li>
+                  <li>
+                    Collaborated in an agile team of seven to engineer an <strong>admin and customer portal from scratch</strong>, now utilized daily by <strong>100+ internal employees</strong>, significantly reducing client support workload.
+                  </li>
+                </ul>
+
+                <div class="exp-tags">
+                  <span class="exp-tag">Java</span>
+                  <span class="exp-tag">Spring Boot</span>
+                  <span class="exp-tag">REST APIs</span>
+                  <span class="exp-tag">MariaDB</span>
+                  <span class="exp-tag">Cron Schedulers</span>
+                  <span class="exp-tag">B2B Enterprise Portal</span>
+                  <span class="exp-tag">JPA / Hibernate</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role 4: Tata Consultancy Services -->
+            <div class="timeline-item">
+              <div class="timeline-node"></div>
+              <div class="experience-card">
+                <div class="exp-header">
+                  <div>
+                    <h3 class="exp-role">Assistant System Engineer</h3>
+                    <div class="exp-company">
+                      <span>Tata Consultancy Services (TCS)</span>
+                      <span class="exp-loc">• Noida, India</span>
+                    </div>
+                  </div>
+                  <div class="exp-date-badge">
+                    <i class="far fa-calendar-alt"></i> Feb 2020 – Jun 2022
+                  </div>
+                </div>
+
+                <ul class="exp-bullets">
+                  <li>
+                    Collaborated closely with product managers to <strong>re-architect a legacy multi-page web application into a single-page web app built on Spring Boot</strong>, resulting in a <strong>yearly revenue lift of $1.1 million</strong>.
+                  </li>
+                  <li>
+                    Built the <strong>server catalogue system</strong> for calculating provisioned and decommissioned servers utilized across multiple engineering squads, drastically improving cost transparency and server spend tracking.
+                  </li>
+                  <li>
+                    Built an internal tool to automate <strong>server expiry notification emails and active monitoring of customer-facing web applications</strong>, eliminating accidental expiration of critical servers.
+                  </li>
+                </ul>
+
+                <div class="exp-tags">
+                  <span class="exp-tag">Java</span>
+                  <span class="exp-tag">Spring Boot</span>
+                  <span class="exp-tag">SPA Architecture</span>
+                  <span class="exp-tag">Server Catalogue</span>
+                  <span class="exp-tag">Infrastructure Monitoring</span>
+                  <span class="exp-tag">Stored Procedures</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects & GitHub Showcase -->
+  <section class="section-padding" id="projects" style="background: rgba(255, 255, 255, 0.01);">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fas fa-folder-open"></i> Portfolio Showcase</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle mx-auto">
+          A selection of real-world backend applications, microservices, cloud systems, and open-source repositories.
+        </p>
+      </div>
+
+      <div class="row">
+        <!-- Project 1: AML Portal (Lead Project) -->
+        <div class="col-lg-6 mb-4">
+          <div class="project-card">
+            <div>
+              <div class="project-top-row">
+                <div class="project-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="project-links">
+                  <span class="badge" style="background: rgba(99, 102, 241, 0.2); color: var(--accent-cyan); font-size: 0.75rem; padding: 0.35rem 0.65rem;">Enterprise Project</span>
+                </div>
+              </div>
+
+              <h3 class="project-title">AML (Anti-Money Laundering) Portal</h3>
+              <p class="project-desc">
+                High-security transaction monitoring and compliance portal for financial risk mitigation and fraud prevention.
               </p>
-            <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
+
+              <ul class="project-features">
+                <li>Played a key role in migrating the application to modern cloud infrastructure.</li>
+                <li>Implemented AWS S3 for scalable document storage and SES for reliable email delivery.</li>
+                <li>Optimized database structures and refined database schema designs using Flyway.</li>
+                <li>Achieved 90% code test coverage, ensuring robust reliability.</li>
+                <li>Acted as lead developer during critical production deployment.</li>
+              </ul>
+            </div>
+
+            <div class="project-tech-tags">
+              <span class="project-tag">Java</span>
+              <span class="project-tag">Spring Boot</span>
+              <span class="project-tag">JPA / Hibernate</span>
+              <span class="project-tag">Flyway</span>
+              <span class="project-tag">Amazon SES</span>
+              <span class="project-tag">Amazon S3</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Ride-Sharing Microservices App -->
+        <div class="col-lg-6 mb-4">
+          <div class="project-card">
+            <div>
+              <div class="project-top-row">
+                <div class="project-icon">
+                  <i class="fas fa-taxi"></i>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/owaisnaim/Ride-Sharing-App-Springboot" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View Source on GitHub">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="project-title">Ride-Sharing App (Spring Boot)</h3>
+              <p class="project-desc">
+                Scalable backend microservices architecture simulating real-time ride-sharing platforms with driver-rider matching and ride lifecycle workflows.
+              </p>
+
+              <ul class="project-features">
+                <li>RESTful API design for booking requests, driver dispatch, and ride tracking.</li>
+                <li>Spring Data JPA persistence layer with transaction isolation.</li>
+                <li>Clean architecture following SOLID principles and domain-driven patterns.</li>
+              </ul>
+            </div>
+
+            <div class="project-tech-tags">
+              <span class="project-tag">Java</span>
+              <span class="project-tag">Spring Boot</span>
+              <span class="project-tag">REST APIs</span>
+              <span class="project-tag">JPA</span>
+              <span class="project-tag">Microservices</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Kafka Distributed Event Streaming -->
+        <div class="col-lg-6 mb-4">
+          <div class="project-card">
+            <div>
+              <div class="project-top-row">
+                <div class="project-icon">
+                  <i class="fas fa-stream"></i>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/owaisnaim/Kafka-SpringBoot-App" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View Source on GitHub">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="project-title">Apache Kafka Event Streaming Service</h3>
+              <p class="project-desc">
+                Distributed messaging and event streaming application demonstrating asynchronous, decoupled inter-service communication with Apache Kafka.
+              </p>
+
+              <ul class="project-features">
+                <li>High-throughput message producer and consumer topic listeners.</li>
+                <li>Custom JSON serializer/deserializer for event payloads.</li>
+                <li>Resilient error-handling and dead-letter queues configuration.</li>
+              </ul>
+            </div>
+
+            <div class="project-tech-tags">
+              <span class="project-tag">Java</span>
+              <span class="project-tag">Spring Boot</span>
+              <span class="project-tag">Apache Kafka</span>
+              <span class="project-tag">Event-Driven</span>
+              <span class="project-tag">Distributed Systems</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: AWS S3 Storage Service -->
+        <div class="col-lg-6 mb-4">
+          <div class="project-card">
+            <div>
+              <div class="project-top-row">
+                <div class="project-icon">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/owaisnaim/S3Bucket-Spring-Boot-App" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View Source on GitHub">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="project-title">AWS S3 Cloud Storage Integration Service</h3>
+              <p class="project-desc">
+                Production-ready Spring Boot microservice integrating AWS S3 SDK for secure multipart file uploads, presigned URLs, and asset management.
+              </p>
+
+              <ul class="project-features">
+                <li>Secure multipart file streaming and authenticated bucket downloads.</li>
+                <li>Configured AWS IAM credentials, bucket policies, and lifecycle management.</li>
+                <li>Modular REST controllers for plug-and-play cloud storage integration.</li>
+              </ul>
+            </div>
+
+            <div class="project-tech-tags">
+              <span class="project-tag">Java</span>
+              <span class="project-tag">Spring Boot</span>
+              <span class="project-tag">AWS SDK</span>
+              <span class="project-tag">Amazon S3</span>
+              <span class="project-tag">REST APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Spring Todo & Task Workflow -->
+        <div class="col-lg-6 mb-4">
+          <div class="project-card">
+            <div>
+              <div class="project-top-row">
+                <div class="project-icon">
+                  <i class="fas fa-tasks"></i>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/owaisnaim/Todo-App-Spring" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View Source on GitHub">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="project-title">Spring Enterprise Task & Workflow App</h3>
+              <p class="project-desc">
+                Full-featured task management and scheduling application leveraging Spring MVC, Hibernate ORM, and relational database persistence.
+              </p>
+
+              <ul class="project-features">
+                <li>Database CRUD operations with Hibernate ORM and MariaDB.</li>
+                <li>Session-based user authentication and data isolation.</li>
+                <li>Responsive UI with real-time task status updates.</li>
+              </ul>
+            </div>
+
+            <div class="project-tech-tags">
+              <span class="project-tag">Java</span>
+              <span class="project-tag">Spring MVC</span>
+              <span class="project-tag">Hibernate</span>
+              <span class="project-tag">MariaDB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Open Source GitHub Card -->
+        <div class="col-lg-6 mb-4">
+          <div class="project-card" style="border-style: dashed; justify-content: center; text-align: center; align-items: center; padding: 2.5rem 2rem;">
+            <div class="project-icon mb-3" style="width: 56px; height: 56px; font-size: 1.6rem; margin: 0 auto;">
+              <i class="fab fa-github"></i>
+            </div>
+            <h3 class="project-title" style="font-size: 1.25rem;">More Projects on GitHub</h3>
+            <p class="project-desc" style="max-width: 380px; margin: 0 auto 1.5rem;">
+              Explore more repositories, code samples, microservices experiments, and open-source contributions on my GitHub profile.
+            </p>
+            <a href="https://github.com/owaisnaim" target="_blank" rel="noopener noreferrer" class="btn-primary-glow">
+              <i class="fab fa-github"></i> Visit @owaisnaim on GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & References Section -->
+  <section class="section-padding" id="education">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fas fa-graduation-cap"></i> Background</span>
+        <h2 class="section-title">Education & References</h2>
+        <p class="section-subtitle mx-auto">
+          Academic foundation in Information Technology and professional recommendations from industry leaders.
+        </p>
+      </div>
+
+      <div class="row">
+        <!-- Education Card -->
+        <div class="col-lg-6 mb-4">
+          <div class="info-card">
+            <div class="info-header">
+              <div class="info-icon">
+                <i class="fas fa-university"></i>
+              </div>
+              <div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.2rem;">Education</h3>
+                <span style="color: var(--text-muted); font-size: 0.85rem;">Undergraduate Degree</span>
+              </div>
+            </div>
+
+            <div style="padding: 1.25rem; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--text-main);">
+                  Bachelor of Technology (B.Tech)
+                </h4>
+                <span class="badge" style="background: rgba(99, 102, 241, 0.15); color: var(--accent-cyan); font-size: 0.8rem; padding: 0.35rem 0.65rem;">2015 – 2019</span>
+              </div>
+              <p style="color: var(--accent-cyan); font-weight: 600; margin-bottom: 0.35rem;">
+                Information Technology
+              </p>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0;">
+                <i class="fas fa-map-marker-alt mr-1"></i> University Institute of Engineering and Technology (UIET), Kanpur
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Professional References Card -->
+        <div class="col-lg-6 mb-4">
+          <div class="info-card">
+            <div class="info-header">
+              <div class="info-icon">
+                <i class="fas fa-user-check"></i>
+              </div>
+              <div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.2rem;">Professional References</h3>
+                <span style="color: var(--text-muted); font-size: 0.85rem;">Available on request</span>
+              </div>
+            </div>
+
+            <div class="reference-item">
+              <h4 class="reference-name">Sandeep Kumar</h4>
+              <div class="reference-role"><i class="fas fa-building mr-1"></i> Associate Vice President, Compunnel Digital</div>
+              <div class="reference-contact"><i class="fas fa-envelope mr-1"></i> Professional Reference available via email</div>
+            </div>
+
+            <div class="reference-item">
+              <h4 class="reference-name">Kapil Chawla</h4>
+              <div class="reference-role"><i class="fas fa-building mr-1"></i> Senior Manager, Tata Consultancy Services (TCS)</div>
+              <div class="reference-contact"><i class="fas fa-envelope mr-1"></i> Professional Reference available via email</div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Services -->
-    <section class="content-section bg-primary text-white text-center" id="services">
-      <div class="container">
-        <div class="content-section-heading">
-          <h3 class="text-secondary mb-0">Services</h3>
-          <h2 class="mb-5">What We Offer</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-screen-smartphone"></i>
-            </span>
-            <h4>
-              <strong>Responsive</strong>
-            </h4>
-            <p class="text-faded mb-0">Looks great on any screen size!</p>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-pencil"></i>
-            </span>
-            <h4>
-              <strong>Redesigned</strong>
-            </h4>
-            <p class="text-faded mb-0">Freshly redesigned.</p>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-like"></i>
-            </span>
-            <h4>
-              <strong>Favorited</strong>
-            </h4>
-            <p class="text-faded mb-0">Millions of users
-              <i class="fas fa-heart"></i></p>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-mustache"></i>
-            </span>
-            <h4>
-              <strong>Question</strong>
-            </h4>
-            <p class="text-faded mb-0">I mustache you a question...</p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Contact & Call to Action Section -->
+  <section class="section-padding" id="contact" style="background: rgba(255, 255, 255, 0.01);">
+    <div class="container">
+      <div class="contact-container-card">
+        <span class="section-tag mb-3"><i class="fas fa-paper-plane"></i> Get In Touch</span>
+        <h2 class="section-title mb-3">Let's Connect & Build Something Great</h2>
+        <p class="section-subtitle mx-auto" style="max-width: 600px; margin-bottom: 2rem;">
+          Whether you're looking to discuss Senior Backend roles, distributed microservices architecture, cloud migrations, or technical pair programming, my inbox is always open.
+        </p>
 
-    <!-- Callout -->
-    <section class="callout">
-      <div class="container text-center">
-        <h2 class="mx-auto mb-5">Get a Fresh Modern website!</h2>
-        <a class="btn btn-primary btn-xl" href="mailto:owaisnaim786@gmail.com">Contact Now!</a>
-      </div>
-    </section>
+        <div class="contact-channels">
+          <a class="contact-channel-card" href="mailto:owaisnaim9@gmail.com">
+            <div class="channel-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="channel-info">
+              <div class="channel-label">Direct Email</div>
+              <div class="channel-value">owaisnaim9@gmail.com</div>
+            </div>
+          </a>
 
-    <!-- Portfolio -->
-    <section class="content-section" id="portfolio">
-      <div class="container">
-        <div class="content-section-heading text-center">
-          <h3 class="text-secondary mb-0">Portfolio</h3>
-          <h2 class="mb-5">Recent Projects</h2>
+          <a class="contact-channel-card" href="https://www.linkedin.com/in/owaisnaim/" target="_blank" rel="noopener noreferrer">
+            <div class="channel-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div class="channel-info">
+              <div class="channel-label">LinkedIn Profile</div>
+              <div class="channel-value">/in/owaisnaim</div>
+            </div>
+          </a>
+
+          <a class="contact-channel-card" href="https://github.com/owaisnaim" target="_blank" rel="noopener noreferrer">
+            <div class="channel-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="channel-info">
+              <div class="channel-label">GitHub Profile</div>
+              <div class="channel-value">@owaisnaim</div>
+            </div>
+          </a>
         </div>
-        <div class="row no-gutters">
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="http://pathshalahub.in/">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Pathshalahub</h2>
-                  <p class="mb-0">Admission Guidance</p>
-                </span>
-              </span>
-              <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Ice Cream</h2>
-                  <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
-                </span>
-              </span>
-              <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Strawberries</h2>
-                  <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
-                </span>
-              </span>
-              <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Workspace</h2>
-                  <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                </span>
-              </span>
-              <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
-            </a>
-          </div>
+
+        <div class="d-flex justify-content-center flex-wrap gap-3" style="gap: 1rem;">
+          <a href="mailto:owaisnaim9@gmail.com" class="btn-primary-glow">
+            <i class="fas fa-envelope-open-text"></i> Send Me An Email
+          </a>
+          <button onclick="copyEmailToClipboard('owaisnaim9@gmail.com')" class="btn-secondary-outline" style="cursor: pointer;">
+            <i class="fas fa-copy"></i> Copy Email Address
+          </button>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Call to Action -->
-    <section class="content-section bg-primary text-white">
-      <div class="container text-center">
-        <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-        <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
-        <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <strong style="color: var(--text-main);">Mohd Owais Naim</strong>
+          <span class="mx-2">•</span>
+          <span>Senior Software Engineer</span>
+        </div>
+
+        <div>
+          <span>&copy; <span id="current-year">2026</span> Mohd Owais Naim. All rights reserved.</span>
+        </div>
+
+        <div class="footer-socials">
+          <a class="social-icon-btn" href="https://github.com/owaisnaim" target="_blank" rel="noopener noreferrer" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a class="social-icon-btn" href="https://www.linkedin.com/in/owaisnaim/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a class="social-icon-btn" href="mailto:owaisnaim9@gmail.com" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
       </div>
-    </section>
+    </div>
+  </footer>
 
+  <!-- Scroll to Top Floating Button -->
+  <a class="scroll-to-top" href="#page-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
 
+  <!-- Toast Notification -->
+  <div class="toast-notice" id="toast-notice">
+    <i class="fas fa-check-circle" style="color: var(--accent-emerald);"></i>
+    <span class="toast-msg">Email copied to clipboard!</span>
+  </div>
 
-    <!-- Footer -->
-    <footer class="footer text-center" id="contact">
-      <div class="container">
-        <ul class="list-inline mb-5">
-          <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white mr-3" href="https://facebook.com/owaisnaim">
-              <i class="icon-social-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white mr-3" href="https://twitter.com/owaisnaim">
-              <i class="icon-social-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white" href="https://github.com/owaisnaim">
-              <i class="icon-social-github"></i>
-            </a>
-          </li>
-        </ul>
-        <p class="text-muted small mb-0">This site is owned and operated by Mohd Owais Naim</p> <br>
-        <p class="text-muted small mb-0">Copyright &copy;Mohd Owais Naim 2019</p>
-      </div>
-    </footer>
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/stylish-portfolio.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/stylish-portfolio.min.js"></script>
-
-  </body>
-
+</body>
 </html>
