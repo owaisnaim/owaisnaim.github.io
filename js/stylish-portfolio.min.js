@@ -8,20 +8,19 @@
     $(this).find("i").toggleClass("fa-bars fa-times");
   });
 
-  // Close mobile nav when clicking a link
   $(".nav-links a").click(function() {
     $(".nav-links").removeClass("active");
     $(".mobile-nav-toggle i").removeClass("fa-times").addClass("fa-bars");
   });
 
-  // Fast, responsive smooth scrolling using native browser acceleration
+  // Fast GPU-accelerated smooth scroll
   $('a[href*="#"]:not([href="#"])').click(function(e) {
     var targetId = this.hash;
     if (targetId && $(targetId).length) {
       e.preventDefault();
       var target = $(targetId);
       var navHeight = $('.site-nav').outerHeight() || 70;
-      var targetPosition = target.offset().top - navHeight + 5;
+      var targetPosition = target.offset().top - navHeight;
       
       window.scrollTo({
         top: targetPosition,
@@ -34,28 +33,26 @@
     }
   });
 
-  // Optimized scroll handler using requestAnimationFrame
+  // Scroll listener with requestAnimationFrame
   var isScrolling = false;
   $(window).scroll(function() {
     if (!isScrolling) {
       window.requestAnimationFrame(function() {
         var scrollDistance = $(window).scrollTop();
         
-        // Navbar blur enhancement on scroll
         if (scrollDistance > 30) {
           $('.site-nav').addClass('scrolled');
         } else {
           $('.site-nav').removeClass('scrolled');
         }
 
-        // Scroll to top button
-        if (scrollDistance > 300) {
-          $('.scroll-to-top').css('display', 'inline-flex');
+        if (scrollDistance > 350) {
+          $('.scroll-top-btn').css('display', 'inline-flex');
         } else {
-          $('.scroll-to-top').fadeOut();
+          $('.scroll-top-btn').fadeOut();
         }
 
-        // Active link indicator
+        // Active nav state
         var navHeight = $('.site-nav').outerHeight() || 70;
         $('section[id]').each(function() {
           var top = $(this).offset().top - navHeight - 30;
@@ -73,35 +70,96 @@
     }
   });
 
-  // Scroll to top button action
-  $('.scroll-to-top').click(function(e) {
+  $('.scroll-top-btn').click(function(e) {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Project Category Filter Handler
-  $('.filter-btn').click(function() {
-    var filterValue = $(this).attr('data-filter');
-    $('.filter-btn').removeClass('active');
-    $(this).addClass('active');
+  // Interactive Terminal Tab Switcher
+  window.switchTerminalTab = function(tabName) {
+    $('.terminal-tab-btn').removeClass('active');
+    $('.terminal-code').removeClass('active');
+    
+    $('[data-tab="' + tabName + '"]').addClass('active');
+    $('#tab-' + tabName).addClass('active');
+  };
 
-    if (filterValue === 'all') {
-      $('.project-item').removeClass('hidden').fadeIn(300);
-    } else {
-      $('.project-item').each(function() {
-        var categories = $(this).attr('data-category') || '';
-        if (categories.indexOf(filterValue) !== -1) {
-          $(this).removeClass('hidden').fadeIn(300);
-        } else {
-          $(this).addClass('hidden').fadeOut(200);
-        }
-      });
+  $('.terminal-tab-btn').click(function() {
+    var tab = $(this).attr('data-tab');
+    switchTerminalTab(tab);
+  });
+
+  // Command Palette Logic
+  window.openCommandPalette = function() {
+    $('#cmd-palette').addClass('open');
+    $('#cmd-search-input').val('').focus();
+    filterCommands('');
+  };
+
+  window.closeCommandPalette = function() {
+    $('#cmd-palette').removeClass('open');
+  };
+
+  // Keyboard Shortcuts: Cmd+K / Ctrl+K / Escape
+  $(document).keydown(function(e) {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      if ($('#cmd-palette').hasClass('open')) {
+        closeCommandPalette();
+      } else {
+        openCommandPalette();
+      }
+    }
+    if (e.key === 'Escape') {
+      closeCommandPalette();
     }
   });
 
-  // Animated Stat Counters using IntersectionObserver
+  // Close when clicking outside dialog
+  $('#cmd-palette').click(function(e) {
+    if ($(e.target).is('#cmd-palette')) {
+      closeCommandPalette();
+    }
+  });
+
+  // Command search filter
+  function filterCommands(query) {
+    query = query.toLowerCase().trim();
+    $('.cmd-item').each(function() {
+      var text = $(this).text().toLowerCase();
+      if (!query || text.indexOf(query) !== -1) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  }
+
+  $('#cmd-search-input').on('input', function() {
+    filterCommands($(this).val());
+  });
+
+  // Command item execution
+  window.runCommandAction = function(action, target) {
+    closeCommandPalette();
+    if (action === 'navigate') {
+      var el = $(target);
+      if (el.length) {
+        var navHeight = $('.site-nav').outerHeight() || 70;
+        window.scrollTo({ top: el.offset().top - navHeight, behavior: 'smooth' });
+      }
+    } else if (action === 'copy-email') {
+      copyEmailToClipboard('owaisnaim9@gmail.com');
+    } else if (action === 'open-url') {
+      window.open(target, '_blank', 'noopener,noreferrer');
+    } else if (action === 'email') {
+      window.location.href = target;
+    }
+  };
+
+  // Animated Stat Counters
   function initStatCounters() {
-    var counters = document.querySelectorAll('.metric-number[data-target]');
+    var counters = document.querySelectorAll('.metric-num[data-target]');
     if (!counters.length) return;
 
     var animated = false;
@@ -114,13 +172,12 @@
             var prefix = counter.getAttribute('data-prefix') || '';
             var suffix = counter.getAttribute('data-suffix') || '';
             var isDecimal = target % 1 !== 0;
-            var duration = 1600; // ms
+            var duration = 1400;
             var startTime = null;
 
             function updateCounter(currentTime) {
               if (!startTime) startTime = currentTime;
               var progress = Math.min((currentTime - startTime) / duration, 1);
-              // Ease out quadratic
               var easeProgress = 1 - (1 - progress) * (1 - progress);
               var currentVal = easeProgress * target;
 
@@ -144,26 +201,26 @@
           });
         }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.2 });
 
-    var metricsSection = document.querySelector('.metrics-section');
+    var metricsSection = document.querySelector('#metrics');
     if (metricsSection) {
       observer.observe(metricsSection);
     }
   }
 
-  // Copy email to clipboard helper
+  // Copy Email Helper
   window.copyEmailToClipboard = function(email) {
     if (!email) email = 'owaisnaim9@gmail.com';
     navigator.clipboard.writeText(email).then(function() {
-      showToast('Email copied to clipboard: ' + email);
+      showToast('Copied to clipboard: ' + email);
     }).catch(function() {
       var temp = $('<input>');
       $('body').append(temp);
       temp.val(email).select();
       document.execCommand('copy');
       temp.remove();
-      showToast('Email copied to clipboard: ' + email);
+      showToast('Copied to clipboard: ' + email);
     });
   };
 
@@ -176,7 +233,6 @@
     }, 2500);
   }
 
-  // Initialize on load
   $(document).ready(function() {
     initStatCounters();
   });
