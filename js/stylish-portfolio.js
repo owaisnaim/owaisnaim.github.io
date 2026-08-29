@@ -75,7 +75,7 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Interactive Terminal Tab Switcher (Without Layout Shifts)
+  // Interactive Terminal Tab Switcher (Fully Visible, No Scrolling, No Layout Shifts)
   window.switchTerminalTab = function(tabName) {
     $('.terminal-tab-btn').removeClass('active');
     $('.terminal-code').removeClass('active');

@@ -80,7 +80,7 @@
     <div class="bento-container">
       <div class="bento-grid">
 
-        <!-- Cell 1: Main Profile Bento Card (Span 8) -->
+        <!-- Cell 1: Main Profile Bento Card (Span 7) -->
         <div class="bento-card hero-main-card">
           <div>
             <div class="hero-profile-row">
@@ -124,7 +124,7 @@
           </div>
         </div>
 
-        <!-- Cell 2: Interactive Developer Terminal / System Visualizer (Span 4) -->
+        <!-- Cell 2: Interactive Developer Terminal / System Visualizer (Span 5 - 100% Data Visible, Zero Scroll) -->
         <div class="terminal-card">
           <div class="terminal-header">
             <div class="terminal-controls">
@@ -141,45 +141,43 @@
 
           <div class="terminal-body">
             <!-- Tab 1: cURL Profile -->
-            <pre class="terminal-code active" id="tab-curl"><code><span class="t-muted"># Quick Developer API Preview</span>
+            <pre class="terminal-code active" id="tab-curl"><code><span class="t-muted"># Quick Developer API</span>
 <span class="t-cyan">$</span> curl -s https://owaisnaim.github.io/api
 
 <span class="t-indigo">{</span>
-  <span class="t-green">"name"</span>: <span class="t-yellow">"Mohd Owais Naim"</span>,
-  <span class="t-green">"role"</span>: <span class="t-yellow">"Senior Backend Engineer"</span>,
-  <span class="t-green">"experience_years"</span>: <span class="t-cyan">6</span>,
+  <span class="t-green">"engineer"</span>: <span class="t-yellow">"Mohd Owais Naim"</span>,
+  <span class="t-green">"role"</span>: <span class="t-yellow">"Senior Software Engineer"</span>,
+  <span class="t-green">"experience"</span>: <span class="t-cyan">"6+ Years"</span>,
   <span class="t-green">"core_focus"</span>: [
     <span class="t-yellow">"Spring Boot Microservices"</span>,
-    <span class="t-yellow">"Apache Kafka Event Streams"</span>,
-    <span class="t-yellow">"AWS Cloud Architecture"</span>,
-    <span class="t-yellow">"High-Throughput Caching"</span>
+    <span class="t-yellow">"Kafka Event Streaming"</span>,
+    <span class="t-yellow">"AWS Cloud Architecture"</span>
   ],
   <span class="t-green">"status"</span>: <span class="t-green">"OPEN_FOR_OPPORTUNITIES"</span>
 <span class="t-indigo">}</span></code></pre>
 
             <!-- Tab 2: Architecture YML -->
-            <pre class="terminal-code" id="tab-arch"><code><span class="t-muted"># Core Backend Architecture</span>
+            <pre class="terminal-code" id="tab-arch"><code><span class="t-muted"># Backend Architecture</span>
+<span class="t-cyan">gateway:</span>
+  <span class="t-muted">rate_limit:</span> <span class="t-yellow">Redis TokenBucket</span>
+  <span class="t-muted">security:</span> <span class="t-yellow">JWT / Role-Based RBAC</span>
 <span class="t-cyan">services:</span>
-  <span class="t-indigo">api_gateway:</span>
-    <span class="t-muted">rate_limiting:</span> <span class="t-yellow">Redis TokenBucket</span>
-    <span class="t-muted">auth:</span> <span class="t-yellow">JWT / Role-Based RBAC</span>
-  <span class="t-indigo">transaction_engine:</span>
-    <span class="t-muted">framework:</span> <span class="t-yellow">Spring Boot 3</span>
-    <span class="t-muted">fraud_rules:</span> <span class="t-cyan">10 Custom Real-time Rules</span>
-    <span class="t-muted">event_bus:</span> <span class="t-yellow">Apache Kafka (Pub/Sub)</span>
-  <span class="t-indigo">storage:</span>
-    <span class="t-muted">database:</span> <span class="t-yellow">Amazon RDS / MariaDB</span>
-    <span class="t-muted">caching:</span> <span class="t-yellow">Redis (Multi-layer)</span>
-    <span class="t-muted">assets:</span> <span class="t-yellow">AWS S3 Multipart Stream</span></code></pre>
+  <span class="t-muted">framework:</span> <span class="t-yellow">Spring Boot 3</span>
+  <span class="t-muted">fraud_rules:</span> <span class="t-cyan">10 Real-time Rules</span>
+  <span class="t-muted">event_bus:</span> <span class="t-yellow">Apache Kafka (Pub/Sub)</span>
+<span class="t-cyan">persistence:</span>
+  <span class="t-muted">database:</span> <span class="t-yellow">MariaDB / AWS RDS</span>
+  <span class="t-muted">caching:</span> <span class="t-yellow">Redis (Multi-tier)</span>
+  <span class="t-muted">storage:</span> <span class="t-yellow">AWS S3 Multipart Stream</span></code></pre>
 
             <!-- Tab 3: Tech Stack JSON -->
-            <pre class="terminal-code" id="tab-stack"><code><span class="t-muted"># Core Technology Snapshot</span>
+            <pre class="terminal-code" id="tab-stack"><code><span class="t-muted"># Technology Matrix</span>
 <span class="t-indigo">{</span>
   <span class="t-green">"languages"</span>: [<span class="t-yellow">"Java (8/11/17+)"</span>, <span class="t-yellow">"SQL"</span>],
-  <span class="t-green">"frameworks"</span>: [<span class="t-yellow">"Spring Boot"</span>, <span class="t-yellow">"Spring Data JPA"</span>, <span class="t-yellow">"Hibernate"</span>],
+  <span class="t-green">"frameworks"</span>: [<span class="t-yellow">"Spring Boot"</span>, <span class="t-yellow">"Spring JPA"</span>, <span class="t-yellow">"Hibernate"</span>],
   <span class="t-green">"cloud_infra"</span>: [<span class="t-yellow">"AWS SES"</span>, <span class="t-yellow">"AWS S3"</span>, <span class="t-yellow">"AWS RDS"</span>, <span class="t-yellow">"Docker"</span>],
   <span class="t-green">"messaging"</span>: [<span class="t-yellow">"Apache Kafka"</span>, <span class="t-yellow">"Event-Driven"</span>],
-  <span class="t-green">"testing"</span>: [<span class="t-yellow">"JUnit 5"</span>, <span class="t-yellow">"Mockito"</span>, <span class="t-yellow">"90%+ Coverage"</span>]
+  <span class="t-green">"testing"</span>: [<span class="t-yellow">"JUnit 5"</span>, <span class="t-yellow">"Mockito (90%+ Coverage)"</span>]
 <span class="t-indigo">}</span></code></pre>
           </div>
         </div>
