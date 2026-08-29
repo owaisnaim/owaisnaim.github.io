@@ -492,7 +492,7 @@ code, .font-mono {
 }
 
 /* -------------------------------------------------------------
-   Interactive System Terminal Bento Tile (100% Visible, No Scroll Needed)
+   Interactive System Terminal Bento Tile (Absolute Positioning = Absolute Zero Shift)
 -------------------------------------------------------------- */
 .terminal-card {
   grid-column: span 5;
@@ -552,24 +552,38 @@ code, .font-mono {
   color: var(--text-primary);
 }
 
-/* Full Visibility Terminal Viewport (No scrollbar needed, zero layout shifts) */
+/* Stable Absolute-Layered Terminal Body: Immuntable 315px Height Guarantee */
 .terminal-body {
-  padding: 1.1rem 1.15rem;
+  position: relative;
+  height: 315px;
+  min-height: 315px;
+  max-height: 315px;
+  padding: 1rem 1.15rem;
   font-size: 0.785rem;
   color: var(--text-secondary);
-  flex: 1 1 auto;
-  line-height: 1.58;
+  line-height: 1.55;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .terminal-code {
-  display: none;
+  position: absolute;
+  top: 1rem;
+  left: 1.15rem;
+  right: 1.15rem;
+  bottom: 1rem;
   margin: 0;
   white-space: pre;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
 }
 
 .terminal-code.active {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .t-cyan { color: var(--accent-cyan); }
@@ -1230,7 +1244,9 @@ code, .font-mono {
     grid-column: span 12;
   }
   .terminal-body {
-    padding: 1rem;
+    height: 315px;
+    min-height: 315px;
+    max-height: 315px;
   }
   .metrics-grid-row {
     grid-template-columns: repeat(2, 1fr);
