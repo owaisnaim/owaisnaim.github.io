@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
   <meta name="description" content="Mohd Owais Naim - Senior Software Engineer specializing in Java, Spring Boot Microservices, and AWS Cloud Architecture.">
   <meta name="author" content="Mohd Owais Naim">
   <meta name="keywords" content="Mohd Owais Naim, Senior Software Engineer, Backend Engineer, Java Developer, Spring Boot, Microservices, AWS, Distributed Systems">
@@ -57,6 +57,11 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li class="mobile-search-nav-item d-sm-none">
+          <a href="javascript:void(0)" onclick="openCommandPalette();" style="color: var(--accent-cyan);">
+            <i class="fas fa-search mr-1"></i> Quick Search (⌘K)
+          </a>
+        </li>
       </ul>
 
       <div class="nav-actions">
@@ -64,6 +69,9 @@
           <i class="fas fa-search"></i>
           <span>Search</span>
           <kbd>⌘K</kbd>
+        </button>
+        <button class="btn-cmd-k-mobile d-inline-flex d-sm-none" onclick="openCommandPalette()" aria-label="Open Search Command Palette" title="Quick Search" type="button">
+          <i class="fas fa-search"></i>
         </button>
         <a class="btn-nav-resume d-none d-md-inline-flex" href="mailto:owaisnaim9@gmail.com?subject=Resume%20Request%20-%20Mohd%20Owais%20Naim%20(Senior%20Software%20Engineer)&body=Hi%20Mohd%20Owais,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20request%20a%20copy%20of%20your%20latest%20resume.%0D%0A%0D%0ABest%20regards," title="Request Resume PDF">
           <i class="fas fa-file-pdf mr-1"></i> Resume
@@ -103,24 +111,28 @@
           </div>
 
           <div class="hero-cta-group">
-            <a href="mailto:owaisnaim9@gmail.com?subject=Resume%20Request%20-%20Mohd%20Owais%20Naim%20(Senior%20Software%20Engineer)&body=Hi%20Mohd%20Owais,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20request%20a%20copy%20of%20your%20latest%20resume.%0D%0A%0D%0ABest%20regards," class="btn-primary-linear">
-              <i class="fas fa-file-pdf"></i> Request Resume
-            </a>
-            <a href="#experience" class="btn-secondary-linear">
-              <i class="fas fa-briefcase"></i> Experience
-            </a>
-            <a href="#projects" class="btn-secondary-linear">
-              <i class="fas fa-code-branch"></i> Projects
-            </a>
-            <a class="social-pill-btn" href="https://github.com/owaisnaim" target="_blank" rel="noopener noreferrer" title="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <a class="social-pill-btn" href="https://www.linkedin.com/in/owaisnaim/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <button class="social-pill-btn" onclick="copyEmailToClipboard('owaisnaim9@gmail.com')" title="Copy Email" type="button" style="cursor: pointer;">
-              <i class="fas fa-copy"></i>
-            </button>
+            <div class="hero-btn-stack">
+              <a href="mailto:owaisnaim9@gmail.com?subject=Resume%20Request%20-%20Mohd%20Owais%20Naim%20(Senior%20Software%20Engineer)&body=Hi%20Mohd%20Owais,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20request%20a%20copy%20of%20your%20latest%20resume.%0D%0A%0D%0ABest%20regards," class="btn-primary-linear">
+                <i class="fas fa-file-pdf"></i> Request Resume
+              </a>
+              <a href="#experience" class="btn-secondary-linear">
+                <i class="fas fa-briefcase"></i> Experience
+              </a>
+              <a href="#projects" class="btn-secondary-linear">
+                <i class="fas fa-code-branch"></i> Projects
+              </a>
+            </div>
+            <div class="hero-social-row">
+              <a class="social-pill-btn" href="https://github.com/owaisnaim" target="_blank" rel="noopener noreferrer" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a class="social-pill-btn" href="https://www.linkedin.com/in/owaisnaim/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <button class="social-pill-btn" onclick="copyEmailToClipboard('owaisnaim9@gmail.com')" title="Copy Email" type="button" style="cursor: pointer;">
+                <i class="fas fa-copy"></i>
+              </button>
+            </div>
           </div>
         </div>
 
