@@ -268,6 +268,27 @@ code, .font-mono {
   color: var(--text-secondary);
 }
 
+.btn-cmd-k-mobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-cmd-k-mobile:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
 .btn-nav-resume {
   display: inline-flex;
   align-items: center;
@@ -430,6 +451,19 @@ code, .font-mono {
   gap: 0.65rem;
 }
 
+.hero-btn-stack {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.hero-social-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
 .btn-primary-linear {
   display: inline-flex;
   align-items: center;
@@ -578,6 +612,23 @@ code, .font-mono {
   visibility: hidden;
   pointer-events: none;
   transition: opacity var(--transition-fast);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+.terminal-code::-webkit-scrollbar {
+  height: 4px;
+}
+
+.terminal-code::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-code::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
 }
 
 .terminal-code.active {
@@ -863,14 +914,18 @@ code, .font-mono {
   margin-bottom: 0.85rem;
 }
 
+.arch-badge,
 .arch-pattern-tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.725rem;
-  padding: 0.15rem 0.55rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 4px;
   background: rgba(56, 189, 248, 0.07);
   border: 1px solid rgba(56, 189, 248, 0.2);
   color: var(--accent-cyan);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .project-summary {
@@ -1182,7 +1237,7 @@ code, .font-mono {
 -------------------------------------------------------------- */
 .toast-toast {
   position: fixed;
-  bottom: 24px;
+  bottom: max(24px, env(safe-area-inset-bottom, 24px));
   left: 50%;
   transform: translateX(-50%) translateY(100px);
   background: #181922;
@@ -1195,6 +1250,7 @@ code, .font-mono {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  max-width: 90vw;
   z-index: 10000;
   opacity: 0;
   transition: all var(--transition-normal);
@@ -1209,10 +1265,10 @@ code, .font-mono {
 
 .scroll-top-btn {
   position: fixed;
-  right: 24px;
-  bottom: 24px;
-  width: 40px;
-  height: 40px;
+  right: max(20px, env(safe-area-inset-right, 20px));
+  bottom: max(20px, env(safe-area-inset-bottom, 20px));
+  width: 44px;
+  height: 44px;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
@@ -1261,20 +1317,35 @@ code, .font-mono {
     grid-column: span 12;
   }
   .mobile-nav-toggle {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
   }
   .nav-links {
     position: fixed;
     top: 60px;
     left: 0;
     right: 0;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     background: rgba(9, 9, 12, 0.98);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 1.5rem;
-    gap: 1rem;
+    gap: 1.15rem;
     border-bottom: 1px solid var(--border-subtle);
     display: none;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+  }
+  .nav-links a {
+    font-size: 1.05rem;
+    padding: 0.4rem 0;
+    display: block;
   }
   .nav-links.active {
     display: flex;
@@ -1285,9 +1356,7 @@ code, .font-mono {
   .hero-profile-row {
     flex-direction: column;
     align-items: flex-start;
-  }
-  .metrics-grid-row {
-    grid-template-columns: 1fr;
+    gap: 1rem;
   }
   .hero-name {
     font-size: 1.85rem;
@@ -1295,12 +1364,155 @@ code, .font-mono {
   .hero-cta-group {
     flex-direction: column;
     align-items: stretch;
+    gap: 0.85rem;
   }
-  .hero-cta-group a {
+  .hero-btn-stack {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.65rem;
+  }
+  .hero-btn-stack a {
     justify-content: center;
+    width: 100%;
+  }
+  .hero-social-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.65rem;
+  }
+  .metrics-grid-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .metric-bento-tile {
+    padding: 1.1rem 0.9rem;
+  }
+  .metric-num {
+    font-size: 1.75rem;
+  }
+  .metric-lbl {
+    font-size: 0.8rem;
+  }
+  .metric-desc {
+    font-size: 0.725rem;
+  }
+  .terminal-header {
+    padding: 0.5rem 0.75rem;
+  }
+  .terminal-tabs {
+    overflow-x: auto;
+    max-width: 100%;
+    scrollbar-width: none;
+  }
+  .terminal-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .terminal-tab-btn {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    min-height: 32px;
+  }
+  .terminal-body {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.72rem;
+    height: 325px;
+    min-height: 325px;
+    max-height: 325px;
+  }
+  .terminal-code {
+    top: 0.75rem;
+    left: 0.85rem;
+    right: 0.85rem;
+    bottom: 0.75rem;
+  }
+  .cmd-palette-backdrop {
+    padding: 1rem;
+    padding-top: max(2rem, env(safe-area-inset-top, 2rem));
+    align-items: flex-start;
+  }
+  .cmd-palette-dialog {
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .cmd-list {
+    flex: 1;
+    max-height: calc(80vh - 75px);
+  }
+  .cmd-input-wrapper {
+    padding: 0.85rem 1rem;
+  }
+  .contact-bento-banner {
+    padding: 2.25rem 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .contact-channels-flex {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+    margin: 1.5rem 0;
+  }
+  .contact-channel-pill {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem 1rem;
   }
   .footer-inner {
     flex-direction: column;
     text-align: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bento-container {
+    padding: 0 1rem;
+  }
+  .bento-card,
+  .experience-bento-card {
+    padding: 1.25rem 1rem;
+  }
+  .hero-section {
+    padding-top: 5.5rem;
+  }
+  .section-wrapper {
+    padding: 3.25rem 0 1rem;
+  }
+  .section-heading {
+    font-size: 1.65rem;
+  }
+  .section-subheading {
+    font-size: 0.925rem;
+    margin-bottom: 1.75rem;
+  }
+  .hero-name {
+    font-size: 1.75rem;
+  }
+  .hero-bio {
+    font-size: 0.925rem;
+  }
+  .hero-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+  }
+  .contact-bento-banner .d-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .contact-bento-banner .btn-primary-linear,
+  .contact-bento-banner .btn-secondary-linear {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .metrics-grid-row {
+    grid-template-columns: 1fr;
   }
 }

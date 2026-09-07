@@ -13,6 +13,14 @@
     $(".mobile-nav-toggle i").removeClass("fa-times").addClass("fa-bars");
   });
 
+  // Dismiss mobile drawer when tapping outside
+  $(document).on("click touchstart", function(e) {
+    if (!$(e.target).closest(".site-nav").length && $(".nav-links").hasClass("active")) {
+      $(".nav-links").removeClass("active");
+      $(".mobile-nav-toggle i").removeClass("fa-times").addClass("fa-bars");
+    }
+  });
+
   // Fast GPU-accelerated smooth scroll
   $('a[href*="#"]:not([href="#"])').click(function(e) {
     var targetId = this.hash;
