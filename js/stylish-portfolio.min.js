@@ -1,23 +1,39 @@
 (function($) {
   "use strict";
 
-  // Mobile menu toggle
+  // Mobile menu toggle & drawer controller
+  function closeMobileNav() {
+    $(".nav-links").removeClass("active");
+    $(".mobile-nav-backdrop").removeClass("active");
+    $("body").removeClass("nav-open");
+    $(".mobile-nav-toggle i").removeClass("fa-times").addClass("fa-bars");
+  }
+
   $(".mobile-nav-toggle").click(function(e) {
     e.preventDefault();
-    $(".nav-links").toggleClass("active");
-    $(this).find("i").toggleClass("fa-bars fa-times");
+    var isOpen = $(".nav-links").hasClass("active");
+    if (isOpen) {
+      closeMobileNav();
+    } else {
+      $(".nav-links").addClass("active");
+      $(".mobile-nav-backdrop").addClass("active");
+      $("body").addClass("nav-open");
+      $(this).find("i").removeClass("fa-bars").addClass("fa-times");
+    }
   });
 
   $(".nav-links a").click(function() {
-    $(".nav-links").removeClass("active");
-    $(".mobile-nav-toggle i").removeClass("fa-times").addClass("fa-bars");
+    closeMobileNav();
+  });
+
+  $(".mobile-nav-backdrop").click(function() {
+    closeMobileNav();
   });
 
   // Dismiss mobile drawer when tapping outside
   $(document).on("click touchstart", function(e) {
-    if (!$(e.target).closest(".site-nav").length && $(".nav-links").hasClass("active")) {
-      $(".nav-links").removeClass("active");
-      $(".mobile-nav-toggle i").removeClass("fa-times").addClass("fa-bars");
+    if (!$(e.target).closest(".site-nav, .mobile-nav-backdrop").length && $(".nav-links").hasClass("active")) {
+      closeMobileNav();
     }
   });
 
