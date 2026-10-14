@@ -239,7 +239,6 @@ code, .font-mono {
 
 .nav-link-icon,
 .mobile-drawer-divider,
-.btn-drawer-resume,
 .mobile-drawer-socials {
   display: none;
 }
@@ -328,24 +327,6 @@ body.nav-open {
   background: var(--bg-surface-elevated);
   border-color: var(--border-light);
   color: var(--text-primary);
-}
-
-.btn-nav-resume {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  background: #ffffff;
-  color: #09090c !important;
-  padding: 0.4rem 1rem;
-  border-radius: var(--radius-full);
-  font-size: 0.825rem;
-  font-weight: 600;
-  transition: all var(--transition-fast);
-}
-
-.btn-nav-resume:hover {
-  background: #e4e4e7;
-  transform: translateY(-1px);
 }
 
 .mobile-nav-toggle {
@@ -1374,9 +1355,8 @@ body.nav-open {
   .nav-actions {
     gap: 0.5rem;
   }
-  /* Explicitly hide desktop search button and resume pill on mobile */
-  .btn-cmd-k,
-  .btn-nav-resume {
+  /* Explicitly hide desktop search button on mobile */
+  .btn-cmd-k {
     display: none !important;
   }
   .btn-cmd-k-mobile,
@@ -1475,22 +1455,6 @@ body.nav-open {
     height: 1px;
     background: var(--border-subtle);
     margin: 0.5rem 0;
-  }
-  .btn-drawer-resume {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: #ffffff !important;
-    color: #09090c !important;
-    font-weight: 600 !important;
-    padding: 0.75rem 1rem !important;
-    border-radius: var(--radius-sm) !important;
-    margin-top: 0.25rem;
-    text-align: center;
-  }
-  .btn-drawer-resume:hover {
-    background: #e4e4e7 !important;
   }
   .mobile-drawer-socials {
     display: flex;
